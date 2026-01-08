@@ -1,0 +1,34 @@
+@import '../../styles/variables.css';
+
+.auth-page-dark { min-height: calc(100vh - 80px); display:flex; align-items:center; justify-content:center; padding:40px 20px; background: var(--bg-light); }
+.auth-card-dark { width:460px; background:var(--admin-surface); border-radius:16px; box-shadow:0 30px 80px rgba(2,6,12,0.7); padding:36px; color:var(--text-dark); border:1px solid rgba(255,255,255,0.03); }
+.auth-top-dark { text-align:left; margin-bottom:18px; }
+.auth-logo-dark { display:none; }
+.auth-top-dark h1 { margin:6px 0 0; font-size:28px; color:var(--text-dark); font-weight:900; }
+.auth-sub-dark { color:var(--muted); margin:8px 0 12px; }
+
+.role-toggle { display:flex; gap:12px; margin:12px 0 20px; }
+.role-btn { flex:1; padding:12px 14px; border-radius:12px; font-weight:800; cursor:pointer; border:1px solid rgba(255,255,255,0.04); background:transparent; color:var(--text-dark); text-transform:uppercase; font-size:13px; }
+.role-btn.active { background:linear-gradient(90deg,var(--primary),var(--primary-dark)); color:var(--white); box-shadow:0 12px 30px rgba(255,107,69,0.06); transform:translateY(-2px); }
+
+.auth-form-dark { margin-top:8px; }
+.field { display:block; margin-bottom:14px; }
+.field-label { display:block; margin-bottom:8px; color:var(--text-dark); font-weight:600; }
+.input-wrap { position:relative; }
+.input-icon { position:absolute; left:14px; top:50%; transform:translateY(-50%); color:var(--muted); }
+.input-wrap input, .input-wrap select { width:100%; padding:14px 16px; border-radius:12px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:var(--text-dark); }
+.eye { position:absolute; right:10px; top:50%; transform:translateY(-50%); background:transparent; border:none; cursor:pointer; font-size:16px; color:var(--muted); }
+
+.form-actions { display:flex; align-items:center; justify-content:space-between; margin-top:8px; }
+.forgot { color:var(--accent); text-decoration:none; }
+.submit { background:linear-gradient(90deg,var(--primary),var(--primary-dark)); color:var(--white); padding:12px 28px; border-radius:12px; border:none; box-shadow:0 12px 20px rgba(0,0,0,0.4); cursor:pointer; }
+
+.auth-footer { text-align:center; margin-top:18px; color:var(--muted); }
+.auth-footer a { color:var(--accent); text-decoration:none; font-weight:600; }
+
+.back-home { position: absolute; top: 18px; left: 18px; }
+.back-home .back-link { color: var(--text-dark); text-decoration:none; font-weight:600; display:inline-flex; align-items:center; gap:8px; }
+
+@media (max-width:480px) {
+  .auth-card-dark { width:100%; padding:24px; }
+}

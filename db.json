@@ -1,0 +1,18 @@
+{
+  "owners": [
+    { "id": 1, "firstName": "John", "lastName": "Doe", "address": "123 Main St", "city": "Springfield", "telephone": "555-1234" }
+  ],
+  "pets": [
+    { "id": 1, "name": "Rex", "birthDate": "2020-01-01", "type": "Dog", "ownerId": 1 }
+  ],
+  "visits": [
+    { "id": 1, "petId": 1, "date": "2023-08-10", "description": "Annual checkup" }
+  ],
+  "veterinarians": [
+    { "id": 1, "firstName": "Dr. Jane", "lastName": "Smith", "specialty": "Surgery" }
+  ],
+  "users": [
+    { "id": 1, "name": "Admin", "email": "admin@petcare.com", "password": "admin123", "role": "Admin" },
+    { "id": 2, "name": "John Doe", "email": "john@example.com", "password": "password123", "role": "Customer" }
+  ]
+}

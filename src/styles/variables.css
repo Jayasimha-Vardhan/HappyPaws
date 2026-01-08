@@ -1,0 +1,32 @@
+:root {
+  --primary: #ff6b45; /* warm accent / CTA */
+  --primary-dark: #ff4a2a;
+  --accent: #f7c948; /* yellow accent for headings */
+  --accent-2: #ff9074; /* soft coral */
+  --admin-bg: #07101a; /* deep navy background */
+  --admin-surface: #1f2328; /* card surface */
+  --surface-2: #111418; /* darker surface */
+  --text-dark: #e6eef6; /* light text on dark bg */
+  --muted: #9aa6b2; /* subdued text */
+  --bg-light: linear-gradient(180deg,#08101a,#0b1218);
+  --white: #ffffff;
+
+  /* spacing & type */
+  --radius: 10px;
+  --gap: 16px;
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+/* Dark mode override class */
+:root.admin-dark {
+  --primary: #ff6b45;
+  --primary-dark: #ff4a2a;
+  --accent: #f7c948;
+  --admin-bg: #07101a;
+  --admin-surface: #111418;
+  --text-dark: #e6eef6;
+  --muted: #9aa6b2;
+  --bg-light: linear-gradient(180deg,#07101a,#0b1218);
+  --white: #0b1220;
+}
+

@@ -1,0 +1,29 @@
+.audit-logs {
+  padding: 20px;
+}
+
+.audit-logs h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.audit-logs table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.audit-logs th, .audit-logs td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.audit-logs th {
+  background: #f4f4f4;
+}
+
+.audit-logs tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+ 

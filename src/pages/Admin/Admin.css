@@ -1,0 +1,89 @@
+.admin-page {
+  padding: 28px;
+}
+.admin-hero {
+  background: linear-gradient(90deg,#f8fafc,#ffffff);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 18px;
+}
+.admin-stats { display:flex; gap:12px; margin:18px 0 24px; flex-wrap:wrap }
+.stat-card { background:#fff; border:1px solid #eef2f7; padding:14px; border-radius:8px; width:180px }
+.stat-number { font-size:20px; font-weight:700 }
+.stat-label { color:#6b7280; margin-top:6px }
+.stat-link { display:inline-block; margin-top:8px; color:#059669 }
+.admin-actions { margin-top:12px }
+.actions-grid { display:flex; gap:12px; flex-wrap:wrap }
+.action-card { padding:16px 20px; background:#fff; border:1px solid #eef2f7; border-radius:8px; color:#0f172a; text-decoration:none }
+.table-placeholder { margin-top:12px; padding:20px; border:1px dashed #e5e7eb; border-radius:6px; color:#6b7280 }
+.admin-page { min-height:100vh; }
+.admin-top { display:flex; align-items:center; justify-content:space-between; padding:12px 20px; background:#ffffff; box-shadow:0 4px 20px rgba(0,0,0,0.04); }
+.admin-brand { font-weight:800; color:#0f172a; }
+.admin-main { padding:24px; }
+
+.admin-page { display:flex; min-height:100vh; }
+
+.admin-sidebar { width:260px; background:#0f172a; color:#fff; display:flex; flex-direction:column; }
+.admin-sidebar .admin-sidebar-top { display:flex; align-items:center; justify-content:space-between; padding:18px; }
+.admin-sidebar .admin-brand { color:#fff; font-weight:800; display:flex; gap:12px; align-items:center; }
+.brand-logo { width:40px; height:40px; border-radius:8px; background:var(--accent); display:flex; align-items:center; justify-content:center; font-weight:800; }
+.brand-text { font-size:14px; }
+.sidebar-toggle { background:transparent; border:0; color:#fff; font-size:14px; cursor:pointer; }
+
+.admin-sidebar-search { padding: 8px 12px; }
+.admin-sidebar-search input { width:100%; border-radius:8px; padding:8px 10px; border:0; background:rgba(255,255,255,0.04); color:var(--white); }
+
+.admin-profile { display:flex; gap:12px; align-items:center; padding:12px; }
+.admin-profile .avatar { width:44px; height:44px; border-radius:8px; background:linear-gradient(135deg,var(--primary),var(--accent)); display:flex; align-items:center; justify-content:center; font-weight:800; }
+.profile-info .name { font-weight:700; }
+.profile-info .role { font-size:12px; color:#cbd5e1; }
+
+.admin-sidenav { display:flex; flex-direction:column; padding:8px 12px; gap:6px; }
+.admin-sidenav a { color:#d1d5db; text-decoration:none; padding:10px 12px; border-radius:8px; font-weight:600; display:flex; align-items:center; gap:12px; }
+.admin-sidenav a span { display:inline-block; }
+.admin-sidenav a .nav-icon { width:20px; height:20px; color: currentColor; }
+.admin-sidenav a.active, .admin-sidenav a:hover { background:rgba(255,255,255,0.06); color:#fff; }
+
+.admin-page.collapsed .admin-sidenav a span { display:none; }
+.admin-page.collapsed .admin-sidenav a .nav-icon { margin:0 auto; }
+
+.admin-sidebar-footer { margin-top:auto; padding:16px; border-top:1px solid rgba(255,255,255,0.04); }
+.admin-user .user-name { font-weight:700; }
+.admin-user .user-role { font-size:12px; color:#cbd5e1; }
+
+.sidenav-section { padding:8px 12px; font-size:12px; color:#9ca3af; margin-top:6px; }
+.badge { font-size:10px; padding:2px 6px; border-radius:8px; margin-left:8px; }
+.badge.new { background:#10b981; color:white; }
+
+.admin-main-area { flex:1; display:flex; flex-direction:column; min-height:100vh; background:#f8fafc; }
+.admin-header-actions { display:flex; align-items:center; gap:12px; }
+.notifications-inline { min-width:240px; }
+
+.admin-card { background:white; border-radius:12px; padding:20px; box-shadow:0 8px 20px rgba(15,23,42,0.06); }
+
+/* Collapsed sidebar */
+.admin-page.collapsed .admin-sidebar { width:72px; }
+.admin-page.collapsed .admin-sidenav a { text-align:center; padding-left:0; }
+
+@media (max-width: 800px) {
+	.admin-sidebar { position:fixed; left:-300px; top:0; bottom:0; z-index:40; transition:left .2s ease; }
+	.admin-page.show-sidebar .admin-sidebar { left:0; }
+	.admin-main-area { margin-left:0; }
+}
+
+/* Theme aware styles */
+:root { --admin-bg-var: var(--admin-bg); --admin-surface-var: var(--admin-surface); }
+.admin-sidebar { background:var(--admin-bg-var); }
+.admin-main-area { background: linear-gradient(180deg, var(--bg-light), #ffffff); }
+.admin-card { background:var(--white); color:var(--text-dark); }
+
+/* Dark-mode adjustments when root has class admin-dark */
+:root.admin-dark {
+	--admin-bg-var: var(--admin-bg);
+	--admin-surface-var: var(--admin-surface);
+}
+.admin-main-area.admin-dark {
+	background: linear-gradient(180deg, #071024, #07142a);
+}
+
+.theme-toggle { border-radius:8px; }
