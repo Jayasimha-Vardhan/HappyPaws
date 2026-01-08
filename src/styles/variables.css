@@ -8,6 +8,10 @@
   --surface-2: #111418; /* darker surface */
   --text-dark: #e6eef6; /* light text on dark bg */
   --muted: #9aa6b2; /* subdued text */
+  --text-on-light: #0b1220; /* primary dark text used on light surfaces */
+  --muted-on-light: #667085; /* muted text for light surfaces */
+  --input-bg-light: #f5f8fb; /* input background on light surfaces */
+  --input-border-light: rgba(11,18,32,0.06);
   --bg-light: linear-gradient(180deg,#08101a,#0b1218);
   --white: #ffffff;
 
@@ -29,4 +33,5 @@
   --bg-light: linear-gradient(180deg,#07101a,#0b1218);
   --white: #0b1220;
 }
+
 

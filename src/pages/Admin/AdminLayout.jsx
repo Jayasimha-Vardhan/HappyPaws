@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, Outlet, NavLink, useNavigate } from 'react-router-dom';
+import { Outlet, NavLink, useNavigate } from 'react-router-dom';
 import '../../components/layout/Navbar.css';
 import './Admin.css';
 import AdminNotifications from '../../components/notifications/AdminNotifications';

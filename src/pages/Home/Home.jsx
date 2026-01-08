@@ -34,7 +34,7 @@ export default function Home() {
             </h1>
             <p className="hero-desc">Your trusted partner in pet healthcare. Happy Paws provides comprehensive veterinary services with love and expertise for your furry family members.</p>
             <div className="hero-ctas">
-              <Link to="/register" className="btn hp-cta primary">Get Started →</Link>
+              <Link to="/login" className="btn hp-cta primary">Get Started →</Link>
               <Link to="/veterinarians" className="btn hp-cta ghost">Meet Our Vets</Link>
             </div>
 

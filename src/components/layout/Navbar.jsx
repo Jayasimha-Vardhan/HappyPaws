@@ -25,7 +25,7 @@ const Navbar = () => {
   const goProtected = (e, path) => {
     e.preventDefault();
     if (!user) {
-      navigate('/register', { state: { from: path } });
+      navigate('/login', { state: { from: path } });
       return;
     }
     navigate(path);
@@ -86,7 +86,7 @@ const Navbar = () => {
         ) : (
           <>
             <button type="button" className="sign-in" onClick={() => navigate('/login')}>Sign In</button>
-            <button type="button" className="get-started" onClick={() => navigate('/register')}>Get Started</button>
+            <button type="button" className="get-started" onClick={() => navigate('/login')}>Get Started</button>
           </>
         )}
       </div>

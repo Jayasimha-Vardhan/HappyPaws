@@ -16,7 +16,7 @@ export default function Footer() {
             <h4>Product</h4>
             <Link to="/">Home</Link>
             <Link to="/dashboard">Dashboard</Link>
-            <Link to="/register">Get Started</Link>
+            <Link to="/login">Get Started</Link>
           </div>
           <div className="links-col">
             <h4>Resources</h4>

@@ -109,11 +109,4 @@ export default function ScheduleVisitModal({ onClose, onSaved }) {
   );
 }
 
-const backdropStyle = {
-  position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
-  background: 'rgba(0,0,0,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1050
-};
-
-const modalStyle = {
-  width: 560, background: '#fff', borderRadius: 8, padding: 18, boxShadow: '0 6px 24px rgba(0,0,0,0.2)'
-};
+/* Removed unused inline style objects (was causing eslint no-unused-vars warnings) */
