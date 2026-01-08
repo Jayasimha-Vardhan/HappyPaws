@@ -1,6 +1,6 @@
 @import '../../styles/variables.css';
 
-.auth-page-dark { min-height: calc(100vh - 80px); display:flex; align-items:center; justify-content:center; padding:40px 20px; background: var(--bg-light); }
+.auth-page-dark { min-height: 100vh; display:flex; align-items:center; justify-content:center; padding:40px 20px; background: var(--bg-light); }
 .auth-card-dark { width:460px; background:var(--admin-surface); border-radius:16px; box-shadow:0 30px 80px rgba(2,6,12,0.7); padding:36px; color:var(--text-dark); border:1px solid rgba(255,255,255,0.03); }
 .auth-top-dark { text-align:left; margin-bottom:18px; }
 .auth-logo-dark { display:none; }
