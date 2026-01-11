@@ -1,4 +1,4 @@
-.hp-home-page { font-family: Inter, system-ui, Arial, sans-serif; }
+.hp-home-page { font-family: Inter, system-ui, Arial, sans-serif; overflow-x: hidden; }
 
 .hp-stats-row { display:flex; gap:24px; justify-content:center; padding:28px 18px; background:transparent; }
 .hp-stat { text-align:center; flex:1; min-width:140px; }
@@ -10,7 +10,13 @@
 .hp-hero h2 { font-size:44px; margin:0 0 12px; color:var(--text-dark); }
 .hp-sub { color:var(--muted); max-width:800px; margin:0 auto 24px; }
 
-.container { max-width:1100px; margin:0 auto; padding:0 20px; }
+.container { max-width:1100px; width:100%; margin:0 auto; padding:0 20px; box-sizing: border-box; }
+
+/* Ensure images in the landing page scale down and never cause horizontal scroll */
+.hp-home-page img { max-width: 100%; height: auto; display: block; }
+
+/* Make cards and grid items respect container box sizing on small screens */
+.hp-cards, .testi-cards { box-sizing: border-box; }
 
 .hp-features { padding:32px 0 80px; }
 .hp-cards { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
@@ -20,7 +26,19 @@
 .hp-card-desc { margin:0; color:var(--muted); }
 
 .hp-hero-image-abs { position:fixed; right:24px; bottom:24px; opacity:0.06; pointer-events:none; }
-.hp-hero-image-abs img { width:360px; }
+.hp-hero-image-abs img { width:360px; max-width:360px; height:auto; }
+
+/* About section styles */
+.hp-about { display:flex; gap:36px; align-items:center; padding:56px 0; }
+.hp-about .about-left { flex:1; min-width:0; }
+.hp-about .about-right { flex:0 0 420px; }
+.about-title { font-size:36px; margin:0 0 12px; color:var(--text-dark); font-weight:800; }
+.about-desc { color:var(--muted); margin:0 0 18px; font-size:16px; max-width:680px; }
+.about-list { margin:12px 0 0 0; padding-left:18px; color:var(--muted); }
+.about-list li { margin-bottom:10px; }
+.about-image-card { border-radius:16px; overflow:hidden; box-shadow:0 20px 40px rgba(2,6,12,0.6); }
+.about-image-card img { width:100%; height:auto; display:block; }
+.about-note { margin-top:14px; color:var(--muted); font-weight:600; }
 
 @media (max-width:1000px) {
   .hp-cards { grid-template-columns:repeat(2,1fr); }
@@ -49,10 +67,10 @@
 .hero-features { display:flex; gap:20px; color:var(--muted); font-weight:600; }
 .hf-item { display:flex; align-items:center; gap:8px; background:transparent; }
 
-.hero-right { width:520px; }
+.hero-right { width:520px; max-width:52%; }
 .hero-image-card { position:relative; border-radius:18px; overflow:hidden; box-shadow:0 30px 60px rgba(0,0,0,0.6); }
 .hero-image-card img { width:100%; height:auto; display:block; border-radius:18px; }
-.image-overlay-card { position:absolute; right:18px; bottom:18px; background:linear-gradient(180deg, rgba(255,255,255,0.92), rgba(250,250,245,0.9)); border-radius:12px; padding:14px 16px; display:flex; align-items:center; gap:12px; box-shadow:0 20px 40px rgba(2,6,12,0.25); }
+.image-overlay-card { position:absolute; right:18px; bottom:18px; background:linear-gradient(180deg, rgba(255,255,255,0.92), rgba(250,250,245,0.9)); border-radius:12px; padding:14px 16px; display:flex; align-items:center; gap:12px; box-shadow:0 20px 40px rgba(2,6,12,0.25); max-width:70%; }
 .image-overlay-card .ioc { width:44px; height:44px; border-radius:10px; background:linear-gradient(180deg,var(--accent-2),var(--primary)); display:flex; align-items:center; justify-content:center; color:white; font-size:20px; }
 .image-overlay-card .io-text { text-align:left; }
 .image-overlay-card .io-value { font-weight:900; font-size:28px; color: #07101a; line-height:1; text-shadow: 0 1px 0 rgba(255,255,255,0.6); }
@@ -62,6 +80,106 @@
   .top-hero-inner { flex-direction:column; align-items:flex-start; }
   .hero-right { width:100%; }
   .hero-title { font-size:40px; }
+
+  .hp-about { flex-direction:column; gap:20px; }
+  .hp-about .about-right { width:100%; }
+}
+
+/* Improved responsiveness for tablet and mobile */
+@media (max-width:1200px) {
+  .top-hero-inner { padding:30px 0; gap:18px; }
+  .hero-title { font-size:48px; }
+  .hero-right { width:420px; }
+}
+
+@media (max-width:900px) {
+  .top-hero-inner { flex-direction:column; align-items:center; text-align:center; padding:20px 0; }
+  .hero-left { width:100%; }
+  .hero-right { width:100%; }
+  .hero-title { font-size:34px; }
+  .hero-desc { max-width:100%; }
+  .hero-ctas { justify-content:center; }
+  .hero-image-card { max-width:420px; width:100%; margin:14px auto 0; }
+  .hp-stats-row { flex-direction:row; gap:12px; padding:18px 12px; }
+  .hp-stat { min-width:120px; }
+  .hp-cards { grid-template-columns:repeat(2,1fr); }
+  .hp-hero-image-abs { display:none; }
+}
+
+/* Very small screens: ensure stacking and full-width CTAs */
+@media (max-width:480px) {
+  .hero-title { font-size:22px; }
+  .hero-desc { font-size:14px; }
+  .hero-ctas { flex-direction:column; width:100%; align-items:stretch; }
+  .hp-cta { width:100%; max-width:100%; }
+  .top-hero-inner { padding:12px 10px; }
+  .hp-about { flex-direction:column; align-items:stretch; }
+  .about-right { width:100%; }
+  .image-overlay-card { position: static; margin-top:12px; max-width:none; }
+  .how-steps { flex-direction:column; }
+  .hp-testimonials, .hp-features { padding-left:12px; padding-right:12px; }
+}
+
+@media (max-width:600px) {
+  .top-hero-inner { padding:16px 12px; }
+  .hero-title { font-size:26px; }
+  .hero-desc { font-size:14px; }
+  .hero-ctas { flex-direction:column; width:100%; align-items:center; }
+  .hp-stats-row { flex-direction:column; gap:10px; padding:12px; }
+  .hp-cards { grid-template-columns:1fr; gap:14px; }
+  .about-left, .about-right { width:100%; }
+  .about-right { margin-top:14px; }
+  .about-image-card img { width:100%; height:auto; }
+  .how-steps { flex-direction:column; }
+  .testi-cards { grid-template-columns:1fr; }
+  .hp-bottom-cta .cta-inner { padding:28px 16px; }
+}
+
+@media (max-width:420px) {
+  .logo-img { max-width:120px; max-height:40px; }
+  .hero-title { font-size:22px; }
+  .hp-bottom-cta .cta-title { font-size:22px; }
+}
+
+/* How It Works section */
+.hp-how { padding:48px 0; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)); }
+.how-inner { max-width:1100px; margin:0 auto; text-align:center; }
+.how-title { font-size:32px; margin:0 0 8px; color:var(--text-dark); font-weight:800; }
+.how-sub { color:var(--muted); margin:0 0 24px; }
+.how-steps { display:flex; gap:20px; justify-content:center; margin-top:18px; }
+.how-step { flex:1; min-width:220px; background:var(--admin-surface); padding:20px; border-radius:12px; box-shadow:0 18px 36px rgba(2,6,12,0.5); text-align:left; }
+.how-step h3 { margin:8px 0 6px; font-size:18px; color:var(--text-dark); }
+.how-step p { margin:0; color:var(--muted); }
+.hs-icon { width:48px; height:48px; border-radius:10px; background:linear-gradient(180deg,var(--accent-2),var(--primary)); color:white; display:flex; align-items:center; justify-content:center; font-size:20px; box-shadow:0 8px 20px rgba(2,6,12,0.25); }
+.how-note { margin-top:16px; color:var(--muted); font-weight:600; }
+
+@media (max-width:1000px) {
+  .how-steps { flex-direction:column; }
+  .how-step { text-align:left; }
+}
+
+/* Testimonials */
+.hp-testimonials { padding:48px 0; text-align:center; }
+.testi-heading { font-size:32px; margin:0 0 8px; color:var(--text-dark); font-weight:800; }
+.testi-sub { color:var(--muted); margin:0 0 24px; }
+.testi-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.testi-card { background:var(--admin-surface); border-radius:12px; padding:20px; box-shadow:0 18px 36px rgba(2,6,12,0.5); display:flex; gap:14px; align-items:flex-start; }
+.testi-avatar { flex:0 0 64px; width:64px; height:64px; border-radius:12px; overflow:hidden; box-shadow:0 8px 20px rgba(2,6,12,0.25); }
+.testi-avatar img { width:100%; height:100%; object-fit:cover; display:block; }
+.testi-body { text-align:left; }
+.testi-quote { margin:0 0 12px; color:var(--text-dark); font-weight:600; }
+.testi-meta { display:flex; gap:10px; align-items:center; }
+.testi-name { font-weight:800; color:var(--text-dark); }
+.testi-role { color:var(--muted); font-size:13px; }
+
+@media (max-width:1000px) {
+  .testi-cards { grid-template-columns:repeat(2,1fr); }
+}
+
+@media (max-width:600px) {
+  .testi-cards { grid-template-columns:1fr; }
+  .testi-card { flex-direction:row; }
+  .testi-avatar { width:56px; height:56px; }
 }
 
 @media (max-width:600px) {

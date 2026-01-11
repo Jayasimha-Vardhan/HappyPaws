@@ -2,6 +2,7 @@
 
 .auth-page-dark { min-height: 100vh; display:flex; align-items:center; justify-content:center; padding:40px 20px; background: var(--bg-light); }
 .auth-page-dark { min-height: 100vh; display:flex; align-items:center; justify-content:center; padding:40px 20px; background: var(--bg-light); }
+
 /* New two-column signin layout (desktop-first) */
 .signin-page { min-height: 100vh; display:flex; align-items:center; justify-content:center; padding:40px 20px; background: var(--bg-light); }
 .signin-card { width:100%; max-width:1100px; display:flex; border-radius:18px; overflow:hidden; box-shadow:0 30px 80px rgba(2,6,12,0.08); }
@@ -117,4 +118,38 @@
 /* Ensure the card is centered vertically on short viewports (phones) */
 @media (max-height:600px) {
   .auth-page-dark { align-items:flex-start; padding-top:28px; padding-bottom:28px; }
+}
+
+/* Make the two-column signin layout responsive and scrollable on small screens */
+@media (max-width:900px) {
+  .signin-page { align-items:flex-start; padding:28px 16px; }
+  .signin-card { flex-direction:column; max-width:760px; width:100%; box-shadow:0 24px 60px rgba(2,6,12,0.06); }
+  .signin-left { flex:0 0 auto; min-height:160px; background-position:center; }
+  .signin-left::after { background: linear-gradient(180deg, rgba(2,6,12,0.32), rgba(2,6,12,0.08)); }
+  .signin-right { flex:1 1 auto; padding:24px; }
+  .signin-card-inner { max-height: calc(100vh - 160px); overflow:auto; }
+  .signin-card-inner::-webkit-scrollbar { height:6px; width:6px; }
+  .signin-card-inner::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.06); border-radius:6px; }
+}
+
+@media (max-width:640px) {
+  .signin-page { padding:20px 12px; }
+  .signin-card { border-radius:14px; }
+  .signin-left { display:block; min-height:120px; }
+  .signin-left .hero-overlay { left:18px; bottom:18px; max-width:240px; }
+  .signin-right { padding:18px; }
+  .auth-top h1 { font-size:22px; }
+  .role-toggle { gap:8px; }
+  .role-toggle .role-btn { min-width:0; font-size:13px; }
+  .form-actions { flex-direction:column; gap:10px; align-items:stretch; }
+  .forgot { width:100%; text-align:center; }
+}
+
+/* Smallest devices: optimize spacing and ensure scrolling works */
+@media (max-width:420px) {
+  .signin-left { display:none; }
+  .signin-card { box-shadow:0 18px 40px rgba(2,6,12,0.06); }
+  .signin-right { padding:16px; }
+  .input-wrap input, .input-wrap select { padding:12px 12px; }
+  .auth-top h1 { font-size:20px; }
 }

@@ -60,10 +60,6 @@ export default function Login() {
         </div>
 
         <div className="signin-right">
-          <div className="back-home">
-            <Link to="/" className="back-link">← Back to Home</Link>
-          </div>
-
           <div className="signin-card-inner">
             <div className="auth-top">
               <h1>Log In</h1>
